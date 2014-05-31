@@ -4,6 +4,10 @@ class GameRecommender < Sinatra::Base
 		erb :index
 	end
 
+	get '/stylesheets/style.css' do
+		scss :style, views: 'public/stylesheets'
+	end
+
 	get '/user_info' do
 		content_type :json
 		{
