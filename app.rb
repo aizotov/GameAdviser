@@ -10,8 +10,9 @@ class GameRecommender < Sinatra::Base
 
 	get '/user_info' do
 		content_type :json
+		username = params['username'] || 'no username here'
 		{
-			username: 'username@domain.com',
+			username: username,
 			other_things: 'other things go here'
 		}.to_json
 	end

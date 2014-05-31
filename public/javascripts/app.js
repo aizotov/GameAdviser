@@ -1,11 +1,15 @@
 (function(){
 	function init(){
-		console.log('init!');
-		jQuery('#search').click(doThings);
+		$('#search').click(getUserData);
 	}
 
-	function doThings(){
-		console.log('doing things!');
+	function getUserData(){
+		var username = $('#username_input').val();
+
+		$.get('/user_info', {username: username})
+		.done(function(data){
+			$('#results_container').text(JSON.stringify(data));
+		});
 	}
 
 	window.App = {
