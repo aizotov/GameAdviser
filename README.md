@@ -1,2 +1,4 @@
 GameAdviser
 ===========
+
+run with ```rackup```
