@@ -4,6 +4,9 @@ require 'thin'
 require 'sass'
 require 'sass/plugin/rack'
 require './app.rb'
-require 'json'
+require './PeasantAdapter.rb'
 
-run GameRecommender
+
+@peasant = PeasantAdapter.create(:v1, "localhost:8888")
+         
+run GameRecommender.new(@peasant)
