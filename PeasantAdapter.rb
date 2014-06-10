@@ -20,10 +20,10 @@ end
 
 class V1PeasantAdapter < PeasantAdapter
   def initialize url
-    @@url = url
+    @url = url
   end
   def getUsernameInfo username
-    open("http://#{@@url}/user_info?username=#{username}") do |f|
+    open("http://#{@url}/user_info?username=#{username}") do |f|
       f.read
     end
   end
